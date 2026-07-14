@@ -1,4 +1,4 @@
-The modal agent prisoner's dilemma tournament defined "modal agents" encoded as formulas of Peano arithmetic (PA) with one free variable. 
+[The modal agent prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "modal agents" encoded as formulas of Peano arithmetic (PA) with one free variable. 
 $X(Y)$ means the agent $X$ cooperates in a match against the agent $Y$, and is constructed by plugging in the Gödel number of the formula defining $Y$ as the free variable in the formula defining $X$.
 
 The simplest interesting agent in the tournament was called FairBot.
@@ -18,8 +18,8 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 That's how I originally convinced myself of the equivalence.
 In the next section I'll give this proof, which I call the elementary proof.
-
 Working out the elementary proof was fun but surely we don't need to post proofs like that in the computer age?
+
 As it happens, though, I don't personally know how to treat GL as a routine calculation, even though it's decidable.
 If you know how to decide GL on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
 
@@ -27,11 +27,14 @@ Following the elementary proof, I'll try and give a proof using the fixed point 
 
 Although using the fixed point theorem works, it feels weird to use it on a question that can be settled by elementary means.
 It might be more appropriate to prove some general condition for equivalence to FairBot, perhaps a strengthening of Theorem 4.10.
-But I'll leave that to the sophisticated reader.
+I haven't done that, but in any case I'm considering it out of scope for this post.
+
+I'll note one insight from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
+So while the conditions are equivalent, in a weaker system Payorian fairness would be stricter.
 
 ## Tedious elementary proof
 
-These fairness conditions must hold in PA, but we will show their equivalence using the modal logic GL, using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy).
+These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule), using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy).
 
 The proposition $P$ will stand for $F(Y)$, that the FairBot cooperates.
 The proposition $Q$ will stand for $Y(F)$, that its opponent cooperates.
@@ -51,7 +54,7 @@ For each chunk, I'll just write something like: in theory T,
 $$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
 
 The theory may be GL, since ultimately all these implications must go through in GL.
-But I'll note when it only needs a weaker theory, which will be K4 or K.
+But I'll note when it only needs a weaker theory, which will be [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
 
 I'll trust that a patient reader can fill in the proofs for the chunks, and use them to assemble the full proof required.
 
