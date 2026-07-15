@@ -17,8 +17,8 @@ One way to prove the equivalence of these two fairness conditions is to simply g
 In this post I'll give this elementary proof.
 
 Working out the elementary proof was fun, and I do think there's some value to putting it in public, but surely it's not really necessary to do these kinds of proofs in the computer age?
-But I don't personally know how to treat GL as a routine calculation, even though it's decidable.
-If you know how to decide GL on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
+But I don't personally know how to treat provability logic as a routine calculation, even though it's decidable.
+If you know how to decide it on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone that fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
