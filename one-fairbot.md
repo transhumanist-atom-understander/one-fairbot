@@ -8,7 +8,7 @@ Using $F(Y)$ to mean FairBot cooperates with another agent $Y$, it satisfies:
 $$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box Y(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
-That's because in a previous post, I defined an alternative "Payorian FairBot", which satisfies Payorian fairness:
+That's because in [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames), I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
 $$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box(\Box F(Y) \to Y(F))$$
 
 I wondered, though, is this really a distinct agent?
