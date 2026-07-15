@@ -13,24 +13,24 @@ I wondered, though, is this really a distinct agent?
 The answer is no: these two fairness conditions are equivalent.
 The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payorian-fair.
 
-## The elementary and deep proofs
-
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
-That's how I originally convinced myself of the equivalence.
-In the next section I'll give this proof, which I call the elementary proof.
-Working out the elementary proof was fun but surely we don't need to post proofs like that in the computer age?
+In this post I'll give this elementary proof.
 
-As it happens, though, I don't personally know how to treat GL as a routine calculation, even though it's decidable.
+Working out the elementary proof was fun, and I do think there's some value to putting it in public, but surely it's not really necessary to do these kinds of proofs in the computer age?
+But I don't personally know how to treat GL as a routine calculation, even though it's decidable.
 If you know how to decide GL on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
 
-Following the elementary proof, I'll try and give a proof using the fixed point theorem.
+After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone that fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
+Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
+Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the definition.
+When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
+I don't really want to write this out step by step.
+If someone else does, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
+How about a more general condition for equivalence to FairBot?
+Maybe a strengthening of theorem 4.10?
 
-Although using the fixed point theorem works, it feels weird to use it on a question that can be settled by elementary means.
-It might be more appropriate to prove some general condition for equivalence to FairBot, perhaps a strengthening of Theorem 4.10.
-I haven't done that, but in any case I'm considering it out of scope for this post.
-
-I'll note one insight from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
-So while the conditions are equivalent, in a weaker system Payorian fairness would be stricter.
+I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
+So while the conditions are equivalent in PA, Payorian fairness is in another sense stricter.
 
 ## Tedious elementary proof
 
@@ -125,34 +125,3 @@ $$\frac{\begin{gathered}\Box P \\ \Box(\Box P \to Q)\end{gathered}}{\Box Q}$$
 
 Just this K derivation again:
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \to Q)}$$
-
-## Proof using uniqueness of fixed points
-
-I'll start with a suggestive observation.
-Start with the Payorian fairness condition, but with the cooperation of the agents replaced with the symbols $P$ and $Q$:
-
-$$P \leftrightarrow \Box(\Box P \to Q)$$
-
-Think of this as an equation.
-
-Now, looking at the Löbian fairness condition:
-
-$$P \leftrightarrow \Box Q$$
-
-Think of this as a proposed solution to the equation.
-
-Now, plug it in.
-That is, replace $P$ in the Payorian fairness condition with $\Box Q$.
-You get:
-
-$$\Box Q \leftrightarrow \Box(\Box \Box Q \to Q)$$
-
-This is in fact a theorem of GL.
-So a Löbian FairBot "solves" the Payorian fairness "equation".
-
-I guess that could replace at least half of my elementary proof.
-But can't we avoid the whole thing?
-
-It seems like there should be a one-line proof of the equivalence of Löbian and Payorian FairBots using uniqueness of modal fixed points.
-But the fixed point theorem as I know it requires a modalized formula, which is not what I have with the $P$'s and $Q$'s.
-So I guess we need to actually use the structure of $F(Y)$ and $Y(F)$.
