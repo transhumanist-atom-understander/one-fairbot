@@ -151,24 +151,3 @@ $$\frac{\begin{gathered}\Box P \\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box
 Just this K derivation again:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
-
-## Further questions
-
-### Software
-
-Working out the elementary proof was fun, and I do think there's some value to putting it in public, but surely it's not really necessary to do these kinds of proofs in the computer age?
-But I don't personally know how to treat provability logic as a routine calculation, even though it's decidable.
-If you know how to decide it on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
-
-But perhaps the sophisticated proof leads to a more interesting computer program.
-Does anyone know how to write a program that simplifies bots in the way given in Theorem 4.6?
-I'm imagining something where you input $F(X) \leftrightarrow \Box (\Box F(X) \rightarrow X(F))$ and the output is $F(X) \leftrightarrow \Box X(F)$.
-But I can't think of any other interesting examples to try it on.
-
-### Is there only one FairBot?
-
-I was too lazy to write up the sophisticated proof along the lines of theorem 4.6.
-But also, it felt like a waste to explain high-powered concepts like uniqueness of arithmetic fixed points just to answer an elementary question.
-If someone else wants to write about it, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
-How about a more general condition for equivalence to FairBot?
-Maybe a strengthening of theorem 4.10?
