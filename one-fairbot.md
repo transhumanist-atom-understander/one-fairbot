@@ -63,20 +63,19 @@ If you like, you can interpret that as saying that $(\text{Premise 1} \land \tex
 I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
 
 We need to prove that the provability of each fairness condition implies the provability of the other.
-So, for example, from left to right in the bi-implication I wrote earlier, from Löbian fairness to Payorian fairness:
+So, for example, from left to right in the bi-implication I wrote earlier, from Löbian fairness to Payorian fairness, would be this argument:
 
 $$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
 
-But instead of making this argument directly, I'm going to use the fact that in K4, $(A \land \Box A) \rightarrow B$ entails $\Box A \rightarrow \Box B$.
+But instead of making that argument directly, I'm going to use the fact that in K4, $\Box A \rightarrow \Box B$ (the form of the above argument) is entailed $(A \land \Box A) \rightarrow B$.
 So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
 That feels more natural to me, because I can imagine each line corresponds to a line in a valid PA argument.
 
-We have two fairness conditions.
-And each fairness condition is itself a bi-implication, so from each fairness condition, we must derive both directions of the other condition.
-That's four implications we need to prove.
+We'll have to make two arguments like that, one for each direction between Löbian and Payorian fairness.
+And the conclusion of each argument is itself a bi-implication, so that's four implications we need to prove.
 
 Each of the four implications will get its own subsection of this post.
 And for each implication, I'm going to divide its proof into what seem to me like the significant chunks.
