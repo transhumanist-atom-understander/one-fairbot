@@ -1,3 +1,5 @@
+# My "Payorian FairBot" was just the original FairBot
+
 [The modal agent prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "modal agents" encoded as formulas of Peano arithmetic (PA) with one free variable. 
 $X(Y)$ means the agent $X$ cooperates in a match against the agent $Y$, and is constructed by plugging in the Gödel number of the formula defining $Y$ as the free variable in the formula defining $X$.
 
@@ -6,35 +8,29 @@ Using $F(Y)$ to mean FairBot cooperates with another agent $Y$, it satisfies:
 $$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box Y(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
-That's because in a previous post, I defined an alternative "Payorian FairBot", which satisfies Payorian fairness:
+That's because in [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames), I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
 $$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box(\Box F(Y) \to Y(F))$$
 
 I wondered, though, is this really a distinct agent?
 The answer is no: these two fairness conditions are equivalent.
 The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payorian-fair.
 
+## Elementary and sophisticated proofs
+
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 In this post I'll give this elementary proof.
-
-Working out the elementary proof was fun, and I do think there's some value to putting it in public, but surely it's not really necessary to do these kinds of proofs in the computer age?
-But I don't personally know how to treat GL as a routine calculation, even though it's decidable.
-If you know how to decide GL on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone that fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the definition.
 When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
 We could call this the sophisticated proof as opposed to the elementary proof.
-
-The sophisticated proof is short once you've communicated the required background, but that feels like writing another post, so I'll leave it out.
-If someone else wants to write it up, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
-How about a more general condition for equivalence to FairBot?
-Theorem 4.10 seems like a result in this direction.
+The sophisticated proof along the lines of theorem 4.6 is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
 
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
 So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
 
-## Tedious elementary proof
+## The elementary proof
 
 These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule).
 
@@ -133,3 +129,24 @@ $$\frac{\begin{gathered}\Box P \\ \Box(\Box P \to Q)\end{gathered}}{\Box Q}$$
 Just this K derivation again:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \to Q)}$$
+
+## Further questions
+
+### Software
+
+Working out the elementary proof was fun, and I do think there's some value to putting it in public, but surely it's not really necessary to do these kinds of proofs in the computer age?
+But I don't personally know how to treat provability logic as a routine calculation, even though it's decidable.
+If you know how to decide it on your actual computer, may I suggest the question in this post as the subject of a tutorial for whatever software you use?
+
+But perhaps the sophisticated proof leads to a more interesting computer program.
+Does anyone know how to write a program that simplifies bots in the way given in Theorem 4.6?
+I'm imagining something where you input $F(X) \leftrightarrow \Box (\Box F(X) \rightarrow X(F))$ and the output is $F(X) \leftrightarrow \Box X(F)$.
+But I can't think of any other interesting examples to try it on.
+
+### Is there only one FairBot?
+
+I was too lazy to write up the sophisticated proof along the lines of theorem 4.6.
+But also, it felt like a waste to explain high-powered concepts like uniqueness of arithmetic fixed points just to answer an elementary question.
+If someone else wants to write about it, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
+How about a more general condition for equivalence to FairBot?
+Maybe a strengthening of theorem 4.10?
