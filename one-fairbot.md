@@ -20,7 +20,7 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 In this post I'll give this elementary proof.
 
-After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone that fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
+After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the condition.
 When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
