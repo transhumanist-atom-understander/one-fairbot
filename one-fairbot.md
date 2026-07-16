@@ -9,7 +9,7 @@ $$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box Y(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
 That's because in [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames), I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
-$$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box(\Box F(Y) \to Y(F))$$
+$$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box(\Box F(Y) \rightarrow Y(F))$$
 
 I wondered, though, is this really a distinct agent?
 The answer is no: these two fairness conditions are equivalent.
@@ -32,35 +32,55 @@ So while in PA the conditions are equivalent, Payorian fairness is in another se
 
 ## The elementary proof
 
-These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule).
+We will show the equivalence of the two fairness conditions using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule).
 
 Our GL proof will be in terms of propositional variables $P$ and $Q$.
 The intended interpretation of $P$ is that the FairBot cooperates, and $Q$ that its opponent cooperates.
 
-Motivated by that interpretation, the GL sentence that I'll call "Payorian fairness" is:
-
-$$P \leftrightarrow \Box(\Box P \to Q)$$
-
-and the GL sentence that I'll call "Löbian fairness" is:
+Motivated by that interpretation, the GL sentence that I'll call "Löbian fairness" is:
 
 $$P \leftrightarrow \Box Q$$
 
-What we will prove in GL is the equivalence of Löbian and Payorian fairness, as theorems (not as statements).
-Then, we get the equivalence of the fairness conditions in PA using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy), interpreting $P$ as $F(X)$ and $Q$ as $X(F)$.
+and the GL sentence that I'll call "Payorian fairness" is:
 
-We need to prove each fairness condition implies the other.
+$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
+
+We'll prove that one is provable if only if the other is:
+
+$$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
+
+This is a theorem of GL for propositional variables $P$ and $Q$.
+We can just forget, while proving it, that we intend to substitute in the weird circularly referential PA sentences $F(X)$ and $X(F)$.
+
+### Outline of the elementary proof
+
+In this post, I'm going to notate valid arguments in GL like this:
+
+$$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
+
+If you like, you can interpret that as saying that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
+
+I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
+
+We need to prove that the provability of each fairness condition implies the provability of the other.
+So, for example, from left to right in the bi-implication I wrote earlier, from Löbian fairness to Payorian fairness:
+
+$$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
+
+But instead of making this argument directly, I'm going to use the fact that in K4, $(A \land \Box A) \rightarrow B$ entails $\Box A \rightarrow \Box B$.
+So the argument I'll actually make is this one:
+
+$$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
+
+
+That feels more natural to me, because I can imagine each line corresponds to a line in a PA proof.
+
+We have two fairness conditions.
 And each fairness condition is itself a bi-implication, so from each fairness condition, we must derive both directions of the other condition.
 That's four implications we need to prove.
 
 Each of the four implications will get its own subsection of this post.
 And for each implication, I'm going to divide its proof into what seem to me like the significant chunks.
-For each chunk, I'll just write something like: in theory T,
-
-$$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
-
-The theory may be GL, since ultimately all these implications must go through in GL.
-But I'll note when it only needs a weaker theory, which will be [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
-
 I'll trust that a patient reader can fill in the proofs for the chunks, and use them to assemble the full proof required.
 
 ### A Löbian FairBot is Payorian-fair
@@ -78,26 +98,28 @@ The bi-implication is required to chain those chunks into a full proof.
 
 From these premises we will prove Payorian fairness:
 
-$$P \leftrightarrow \Box(\Box P \to Q)$$
+$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
+
+The following two subsections prove each of the two directions of this bi-implication.
 
 #### Forward: from $P$ to $\Box (\Box P \rightarrow Q)$
 
 This is the easy direction.
 In K:
 
-$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \to Q)}$$
+$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
 #### Reverse: from $\Box (\Box P \rightarrow Q)$ to $P$
 
 One intermediate statement we'll need can be proved in K4:
 
-$$\frac{\begin{gathered}\Box(\Box Q \to P)\end{gathered}}{\Box(\Box Q \to \Box P)}$$
+$$\frac{\begin{gathered}\Box(\Box Q \rightarrow P)\end{gathered}}{\Box(\Box Q \rightarrow \Box P)}$$
 
 Note that the premise here is one direction of the bi-implication defining Löbian fairness.
 
 With that, we can prove $\Box Q$ in GL:
 
-$$\frac{\begin{gathered}\Box(\Box Q \to \Box P)\\ \Box(\Box P \to Q)\end{gathered}}{\Box Q}$$
+$$\frac{\begin{gathered}\Box(\Box Q \rightarrow \Box P)\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
 
 It works because once you chain the two implications you can apply Löb's theorem.
 
@@ -105,8 +127,8 @@ It works because once you chain the two implications you can apply Löb's theore
 
 This time, we are assuming Payorian fairness, so as premises we have
 
-$$P \leftrightarrow \Box(\Box P \to Q)$$
-$$\Box (P \leftrightarrow \Box(\Box P \to Q))$$
+$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
+$$\Box (P \leftrightarrow \Box(\Box P \rightarrow Q))$$
 
 We will separately prove the two directions in the statement of Löbian fairness:
 
@@ -115,20 +137,20 @@ $$P \leftrightarrow \Box Q$$
 #### Forward: from $P$ to $\Box Q$
 
 In K4, assertions of provability imply their own provability.
-That is, if $A \leftrightarrow \Box B$, then $A \to \Box A$.
+That is, if $A \leftrightarrow \Box B$, then $A \rightarrow \Box A$.
 
 $P$ is an assertion that a certain sentence is provable.
 So, let's start by noting that from $P$, we have $\Box P$.
 
 From there, we can do this derivation in K4:
 
-$$\frac{\begin{gathered}\Box P \\ \Box(\Box P \to Q)\end{gathered}}{\Box Q}$$
+$$\frac{\begin{gathered}\Box P \\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
 
 #### Reverse: from $\Box Q$ to $P$
 
 Just this K derivation again:
 
-$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \to Q)}$$
+$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
 ## Further questions
 
