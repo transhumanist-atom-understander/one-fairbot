@@ -33,7 +33,7 @@ The elementary proof I'll give feels like something I could have learned to do i
 The analogy is strengthened because GL is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
 Proving theorem 4.6, on the other hand, is college-level.
 
-I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
+I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually require Löb's theorem.
 So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
 
 ## The elementary proof
@@ -51,7 +51,7 @@ and the GL sentence that I'll call "Payorian fairness" is:
 
 $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
-We'll prove that one is provable if only if the other is:
+We'll prove that one is provable if and only if the other is:
 
 $$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
 
@@ -73,7 +73,7 @@ So, for example, from left to right in the bi-implication I wrote earlier, from 
 
 $$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
 
-But instead of making that argument directly, I'm going to use the fact that in K4, $\Box A \rightarrow \Box B$ (the form of the above argument) is entailed $(A \land \Box A) \rightarrow B$.
+But instead of making that argument directly, I'm going to use the fact that in K4, $\Box A \rightarrow \Box B$ (the form of the above argument) is entailed by $(A \land \Box A) \rightarrow B$.
 So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
@@ -103,7 +103,7 @@ $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 The following two subsections prove each of the two directions of this bi-implication.
 
 I'll never use our two premises above directly as a premise in a chunk.
-Instead, for example, when arguing forward from $P$, I'll use $□Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
+Instead, for example, when arguing forward from $P$, I'll use $\Box Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
 That's what I mean by trusting the reader to chain the chunks into a full proof.
 
 #### Forward: from $P$ to $\Box (\Box P \rightarrow Q)$
