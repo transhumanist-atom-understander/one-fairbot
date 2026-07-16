@@ -15,6 +15,8 @@ I wondered, though, is this really a distinct agent?
 The answer is no: these two fairness conditions are equivalent.
 The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payorian-fair.
 
+# Elementary and sophisticated proofs
+
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 In this post I'll give this elementary proof.
 
@@ -26,16 +28,17 @@ After working out the elementary proof, I was reviewing the original modal comba
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the definition.
 When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
-I don't really want to write this out step by step.
-If someone else does, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
+I'd be interested if anyone can demonstrate a computer program that automatically simplifies bots in this way, though I can't think of any other interesting example problems to try it on.
+
+The sophisticated proof along the lines of theorem 4.6 is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
+If someone else wants to write about it, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
 How about a more general condition for equivalence to FairBot?
 Maybe a strengthening of theorem 4.10?
-Alternatively, it may be cool to see a computer program that simplifies bots automatically, though I can't think of any other interesting examples to run it on.
 
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
 So while the conditions are equivalent in PA, Payorian fairness is in another sense stricter.
 
-## Tedious elementary proof
+## The elementary proof
 
 These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule), using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy).
 
