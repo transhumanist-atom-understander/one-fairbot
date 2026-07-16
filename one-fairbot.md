@@ -27,6 +27,12 @@ When you apply this procedure to Payorian fairness, what you get is Löbian fair
 You can prove equivalence of the Payorian and Löbian FairBots this way, in what I'll call a sophisticated (as opposed to elementary) proof.
 The sophisticated proof is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
 
+There's a distinction here something like the distinction between arithmetic and number theory.
+One might learn to do long multiplication in elementary school, and not learn until college how to prove that all numbers have a unique prime factorization.
+The elementary proof I'll give feels like something I could have learned to do in another universe's elementary school.
+The analogy is strengthened because GL is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
+Proving theorem 4.6, on the other hand, is college-level.
+
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
 So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
 
