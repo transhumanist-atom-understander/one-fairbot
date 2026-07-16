@@ -1,15 +1,15 @@
 # My "Payorian FairBot" was just the original FairBot
 
 [The modal agent prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "modal agents" encoded as formulas of Peano arithmetic (PA) with one free variable. 
-$X(Y)$ means the agent $X$ cooperates in a match against the agent $Y$, and is constructed by plugging in the Gödel number of the formula defining $Y$ as the free variable in the formula defining $X$.
+$A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ as the free variable in the formula defining $A$.
 
 The simplest interesting agent in the tournament was called FairBot.
-Using $F(Y)$ to mean FairBot cooperates with another agent $Y$, it satisfies:
-$$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box Y(F)$$
+Using $F(X)$ to mean FairBot cooperates with another agent $X$, it satisfies:
+$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
 That's because in [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames), I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
-$$\mathrm{PA} \vdash F(Y) \leftrightarrow \Box(\Box F(Y) \rightarrow Y(F))$$
+$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
 
 I wondered, though, is this really a distinct agent?
 The answer is no: these two fairness conditions are equivalent.
@@ -72,8 +72,7 @@ So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-
-That feels more natural to me, because I can imagine each line corresponds to a line in a PA proof.
+That feels more natural to me, because I can imagine each line corresponds to a line in a PA proof that the premises imply the conlusion.
 
 We have two fairness conditions.
 And each fairness condition is itself a bi-implication, so from each fairness condition, we must derive both directions of the other condition.
@@ -93,7 +92,7 @@ $$\begin{gather*}
 \end{gather*}$$
 
 I'll actually never use these bi-implications directly in the chunks I give.
-But, for example, when we're reasoning from $P$ I may start a chunk with $\Box Q$ as a premise.
+But, for example, when we're assuming $P$, I may start a chunk with $\Box Q$ as a premise.
 The bi-implication is required to chain those chunks into a full proof.
 
 From these premises we will prove Payorian fairness:
@@ -139,7 +138,7 @@ $$P \leftrightarrow \Box Q$$
 In K4, assertions of provability imply their own provability.
 That is, if $A \leftrightarrow \Box B$, then $A \rightarrow \Box A$.
 
-$P$ is an assertion that a certain sentence is provable.
+$P$ is of this form, asserting that $\Box P \rightarrow Q$ is provable.
 So, let's start by noting that from $P$, we have $\Box P$.
 
 From there, we can do this derivation in K4:
