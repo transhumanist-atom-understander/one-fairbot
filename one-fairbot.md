@@ -22,10 +22,10 @@ In this post I'll give this elementary proof.
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone that fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
-Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the definition.
+Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the condition.
 When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
-We could call this the sophisticated proof as opposed to the elementary proof.
-The sophisticated proof along the lines of theorem 4.6 is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
+You can prove equivalence of the Payorian and Löbian FairBots this way, in what I'll call a sophisticated (as opposed to elementary) proof.
+The sophisticated proof is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
 
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
 So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
@@ -72,7 +72,7 @@ So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-That feels more natural to me, because I can imagine each line corresponds to a line in a PA proof that the premises imply the conlusion.
+That feels more natural to me, because I can imagine each line corresponds to a line in a valid PA argument.
 
 We have two fairness conditions.
 And each fairness condition is itself a bi-implication, so from each fairness condition, we must derive both directions of the other condition.
@@ -80,7 +80,7 @@ That's four implications we need to prove.
 
 Each of the four implications will get its own subsection of this post.
 And for each implication, I'm going to divide its proof into what seem to me like the significant chunks.
-I'll trust that a patient reader can fill in the proofs for the chunks, and use them to assemble the full proof required.
+I'll trust that a patient reader can fill in the proofs for the chunks, as well as use them to assemble the full proof required.
 
 ### A Löbian FairBot is Payorian-fair
 
@@ -91,15 +91,15 @@ $$\begin{gather*}
   \Box(P \leftrightarrow \Box Q)
 \end{gather*}$$
 
-I'll actually never use these bi-implications directly in the chunks I give.
-But, for example, when we're assuming $P$, I may start a chunk with $\Box Q$ as a premise.
-The bi-implication is required to chain those chunks into a full proof.
-
 From these premises we will prove Payorian fairness:
 
 $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
 The following two subsections prove each of the two directions of this bi-implication.
+
+I'll never use our two premises above directly as a premise in a chunk.
+Instead, for example, when arguing forward from $P$, I'll use $□Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
+That's what I mean by trusting the reader to chain the chunks into a full proof.
 
 #### Forward: from $P$ to $\Box (\Box P \rightarrow Q)$
 
