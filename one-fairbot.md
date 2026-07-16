@@ -24,27 +24,36 @@ After working out the elementary proof, I was reviewing the original modal comba
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the definition.
 When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
-I don't really want to write this out step by step.
-If someone else does, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
+We could call this the sophisticated proof as opposed to the elementary proof.
+
+The sophisticated proof is short once you've communicated the required background, but that feels like writing another post, so I'll leave it out.
+If someone else wants to write it up, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
 How about a more general condition for equivalence to FairBot?
-Maybe a strengthening of theorem 4.10?
+Theorem 4.10 seems like a result in this direction.
 
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
-So while the conditions are equivalent in PA, Payorian fairness is in another sense stricter.
+So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
 
 ## Tedious elementary proof
 
-These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule), using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy).
+These fairness conditions must hold in PA, but we will show their equivalence using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule).
 
-The proposition $P$ will stand for $F(Y)$, that the FairBot cooperates.
-The proposition $Q$ will stand for $Y(F)$, that its opponent cooperates.
+Our GL proof will be in terms of propositional variables $P$ and $Q$.
+The intended interpretation of $P$ is that the FairBot cooperates, and $Q$ that its opponent cooperates.
 
-We will forget for the moment that $P$ and $Q$ stand for these weird self-referential PA formulas, and instead just treat them like any other proposition.
-Everything we need to do, we can do with GL derivations that work for arbitrary $P$ and $Q$.
+Motivated by that interpretation, the GL sentence that I'll call "Payorian fairness" is:
 
-What we will prove in GL is the equivalence of Löbian and Payorian fairness.
-We need to prove they imply each other.
-And when proving one implies the other, we're trying to derive a bi-implication, so we need to prove each direction.
+$$P \leftrightarrow \Box(\Box P \to Q)$$
+
+and the GL sentence that I'll call "Löbian fairness" is:
+
+$$P \leftrightarrow \Box Q$$
+
+What we will prove in GL is the equivalence of Löbian and Payorian fairness, as theorems (not as statements).
+Then, we get the equivalence of the fairness conditions in PA using the [arithmetical adequacy of GL](https://www.lesswrong.com/w/provability-logic#Arithmetical_adequacy), interpreting $P$ as $F(X)$ and $Q$ as $X(F)$.
+
+We need to prove each fairness condition implies the other.
+And each fairness condition is itself a bi-implication, so from each fairness condition, we must derive both directions of the other condition.
 That's four implications we need to prove.
 
 Each of the four implications will get its own subsection of this post.
@@ -74,8 +83,6 @@ The bi-implication is required to chain those chunks into a full proof.
 From these premises we will prove Payorian fairness:
 
 $$P \leftrightarrow \Box(\Box P \to Q)$$
-
-We're proving a bi-implication, so we'll do the forward and reverse directions separately.
 
 #### Forward: from $P$ to $\Box (\Box P \rightarrow Q)$
 
@@ -124,4 +131,5 @@ $$\frac{\begin{gathered}\Box P \\ \Box(\Box P \to Q)\end{gathered}}{\Box Q}$$
 #### Reverse: from $\Box Q$ to $P$
 
 Just this K derivation again:
+
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \to Q)}$$
