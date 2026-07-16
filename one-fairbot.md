@@ -1,6 +1,6 @@
 # My "Payorian FairBot" was just the original FairBot
 
-[The modal agent prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "modal agents" encoded as formulas of Peano arithmetic (PA) with one free variable. 
+[MIRI's proof-based prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "agents" encoded as formulas of Peano arithmetic (PA) with one free variable.
 $A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ as the free variable in the formula defining $A$.
 
 The simplest interesting agent in the tournament was called FairBot.
