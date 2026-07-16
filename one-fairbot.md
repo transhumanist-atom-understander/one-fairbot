@@ -30,6 +30,7 @@ I don't really want to write this out step by step.
 If someone else does, may I suggest that you do a little more with these very general theorems than just specialize them to this case?
 How about a more general condition for equivalence to FairBot?
 Maybe a strengthening of theorem 4.10?
+Alternatively, it may be cool to see a computer program that simplifies bots automatically, though I can't think of any other interesting examples to run it on.
 
 I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually requires Löb's theorem.
 So while the conditions are equivalent in PA, Payorian fairness is in another sense stricter.
