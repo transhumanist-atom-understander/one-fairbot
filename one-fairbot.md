@@ -106,10 +106,10 @@ I'll trust that a patient reader can fill in the proofs for the chunks, as well 
 
 We are assuming Löbian fairness, so we have available as premises
 
-$$\begin{gather*}
+$$\begin{gather}
   P \leftrightarrow \Box Q\\
   \Box(P \leftrightarrow \Box Q)
-\end{gather*}$$
+\end{gather}$$
 
 From these premises we will prove Payorian fairness:
 
@@ -117,7 +117,7 @@ $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
 The following two subsections prove each of the two directions of this bi-implication.
 
-I'll never use our two premises above directly as a premise in a chunk.
+In this section, I won't use our two premises above directly as premises in a chunk.
 Instead, for example, when arguing forward from $P$, I'll use $\Box Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
 That's what I mean by trusting the reader to chain the chunks into a full proof.
 
@@ -135,19 +135,24 @@ One intermediate statement we'll need can be proved in K4:
 $$\frac{\begin{gathered}\Box(\Box Q \rightarrow P)\end{gathered}}{\Box(\Box Q \rightarrow \Box P)}$$
 
 Note that the premise here is one direction of the bi-implication defining Löbian fairness.
+It's boxed, but that's fine because we're assuming boxed Löbian fairness.
 
-With that, we can prove $\Box Q$ in GL:
+Having proved that, we can use it to get from $\Box(\Box P \rightarrow Q)$ to $\Box Q$ in GL:
 
 $$\frac{\begin{gathered}\Box(\Box Q \rightarrow \Box P)\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
 
 It works because once you chain the two implications you can apply Löb's theorem.
 
+Then, remember, we're assuming the equivalence of $\Box Q$ and $P$, so we're done.
+
 ### A Payorian FairBot is Löbian-fair
 
 This time, we are assuming Payorian fairness, so as premises we have
 
-$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
-$$\Box (P \leftrightarrow \Box(\Box P \rightarrow Q))$$
+$$\begin{gather}
+  P \leftrightarrow \Box(\Box P \rightarrow Q)\\
+  \Box (P \leftrightarrow \Box(\Box P \rightarrow Q))
+\end{gather}$$
 
 We will separately prove the two directions in the statement of Löbian fairness:
 
