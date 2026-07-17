@@ -33,12 +33,11 @@ But if you follow the proof of the theorem, you can adapt it to a short demonstr
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
 I'll call this the sophisticated, as opposed to elementary, proof.
 
-The rest of this post will be about the elementary proof.
-That's really just because I had written most of it by the time I understood the sophisticated proof.
-
-However, I'll note that there is one insight that you only get from the elementary proof.
+I'll note that there is one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
 So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
+
+The rest of this post will be a detailed explanation of the elementary proof.
 
 ## The elementary proof
 
