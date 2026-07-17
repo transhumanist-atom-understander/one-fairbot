@@ -4,7 +4,7 @@
 $A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ as the free variable in the formula defining $A$.
 
 The simplest interesting agent in the tournament was called FairBot.
-Using $F(X)$ to mean FairBot cooperates with another agent $X$, it satisfies:
+Using $F(X)$ to mean FairBot cooperates with another agent $X$, then for all agents $X$, we have:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
@@ -53,12 +53,7 @@ and the GL sentence that I'll call "Payorian fairness" is:
 
 $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
-We'll prove that one is provable if and only if the other is:
-
-$$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
-
-This is a theorem of GL for propositional variables $P$ and $Q$.
-We can just forget, while proving it, that we intend to substitute in the weird circularly referential PA sentences $F(X)$ and $X(F)$.
+But despite the intended interpretation, $P$ and $Q$ are just propositional variables, and we can forget, while we're doing the proof, that we ultimately want to talk about the weird circularly-referential PA sentences $F(X)$ and $X(F)$.
 
 ### Arguments in GL and weaker modal logics
 
@@ -66,7 +61,7 @@ In this post, I'm going to notate valid arguments in GL like this:
 
 $$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
 
-If you like, you can interpret that as saying that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
+This means that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
 
 I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
 Adding one axiom to K yields K4, and adding another axiom to K4 yields GL.
@@ -74,30 +69,42 @@ Adding one axiom to K yields K4, and adding another axiom to K4 yields GL.
 So when I say some derivation can be done in K or K4, it can also be done in GL.
 I consider this interesting because GL's extra axiom is Löb's theorem, so if a derivation can be done in K4, that means we didn't need Löb's theorem.
 
-### Outline of the elementary proof
+### How the GL proofs we'll do translate to PA
 
-Repeating the bi-implication we're going to prove, with Löbian fairness on the left and Payorian fairness on the right:
+The one theorem about provability logic that we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
+For a precise statement and an authoritative reference, see Boolos's _The Logic of Provability_, chapter 3, theorem 2.
+(We don't need the converse, arithmetical completeness.
+I consider arithmetical completeness a deep theorem, which would disqualify this as an elementary proof.)
 
-$$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
-
-That is, we need to prove that the provability of each fairness condition implies the provability of the other.
-
-For example, from left to right in the bi-implication, from Löbian fairness to Payorian fairness, would be this argument:
-
-$$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
-
-But instead of making that argument directly, I'm going to use the fact that in K4 (and therefore GL), $\Box A \rightarrow \Box B$ (the form of the above argument) is a theorem if $(A \land \Box A) \rightarrow B$ is.
-So the argument I'll actually make is this one:
+To prove that Löbian fairness implies Payorian fairness, we'll make this argument in GL:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-That feels more natural to me, because I can imagine that each line corresponds to a line in a valid PA argument.
+Just for this direction I'll spell out how this argument of GL helps us in PA.
+Suppose that we have some agent $F$, for which we have Löbian fairness as I originally stated it, as a theorem of PA for each agent.
+Consider some particular $X$, and the theorem of PA expressing Löbian fairness for $F$ and $X$:
+$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
+We also have another theorem of PA expressing the provability of this condition:
+$$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
+We can take this implication we proved in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
+$$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
+Then, by modus ponens, we have Payorian fairness, as a theorem in PA, for this $F$ and $X$:
+$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
+This works for arbitrary $X$, so we have that $F$ is Payorian-fair.
 
-We'll have to make two arguments like that, one for each direction between Löbian and Payorian fairness.
-And the conclusion of each argument is itself a bi-implication, so that's four implications we need to prove.
+And that's the last reasoning _about_ GL we're going to have to do.
+The rest of this post will be reasoning _in_ GL.
 
+### Outline of the elementary proof
+
+We'll also, of course, have to prove the other direction, from Payorian to Löbian fairness:
+
+$$\frac{\begin{gathered}P \leftrightarrow \Box(\Box P \rightarrow Q)\\ \Box (P \leftrightarrow \Box(\Box P \rightarrow Q))\end{gathered}}{P \leftrightarrow \Box Q}$$
+
+And since the conclusion of each of these two argument is itself a bi-implication, that's four implications we need to prove.
 Each of the four implications will get its own subsection of this post.
-And for each implication, I'm going to divide its proof into what seem to me like the significant chunks.
+
+For each implication, I'm going to divide its proof into what seem to me like the significant chunks.
 I'll trust that a patient reader can fill in the proofs for the chunks, as well as use them to assemble the full proof required.
 
 ### A Löbian FairBot is Payorian-fair
