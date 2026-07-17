@@ -19,8 +19,9 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 In this post I'll give this elementary proof.
-The elementary proof feels like something I could have learned to do in another universe's elementary school.
-The analogy is strengthened because GL is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
+It will be long, but once you set it up, it just consists of mechanical derivations that require no abstraction or insight.
+That kind of modal logic feels like something I could have learned to do in another universe's elementary school, when I was learning arithmetic in this universe.
+The analogy is strengthened because the modal logic is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
@@ -57,7 +58,7 @@ $$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Bo
 This is a theorem of GL for propositional variables $P$ and $Q$.
 We can just forget, while proving it, that we intend to substitute in the weird circularly referential PA sentences $F(X)$ and $X(F)$.
 
-### Outline of the elementary proof
+### Arguments in GL and weaker modal logics
 
 In this post, I'm going to notate valid arguments in GL like this:
 
@@ -66,13 +67,24 @@ $$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text
 If you like, you can interpret that as saying that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
 
 I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
+Adding one axiom to K yields K4, and adding another additional axiom to K4 yields GL.
+(Or you can define GL by adding one axiom to K, but that axiom implies K4's extra axiom).
+So when I say some derivation can be done in K or K4, it can also be done in GL.
+I consider this interesting because GL's extra axiom is Löb's theorem, so if a derivation can be done in K4, that means we didn't need Löb's theorem.
 
-We need to prove that the provability of each fairness condition implies the provability of the other.
-So, for example, from left to right in the bi-implication I wrote earlier, from Löbian fairness to Payorian fairness, would be this argument:
+### Outline of the elementary proof
+
+Repeating the bi-implication we're going to prove:
+
+$$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
+
+That is, we need to prove that the provability of each fairness condition implies the provability of the other.
+
+For example, from left to right in the bi-implication, from Löbian fairness to Payorian fairness, would be this argument:
 
 $$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
 
-But instead of making that argument directly, I'm going to use the fact that in K4, $\Box A \rightarrow \Box B$ (the form of the above argument) is entailed by $(A \land \Box A) \rightarrow B$.
+But instead of making that argument directly, I'm going to use the fact that in K4 (and therefore GL), $\Box A \rightarrow \Box B$ (the form of the above argument) is a thereom if $(A \land \Box A) \rightarrow B$ is.
 So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
@@ -139,15 +151,18 @@ $$P \leftrightarrow \Box Q$$
 
 #### Forward: from $P$ to $\Box Q$
 
-In K4, assertions of provability imply their own provability.
-That is, if $A \leftrightarrow \Box B$, then $A \rightarrow \Box A$.
+For this direction, we will need not just $P$ but $\Box P$.
+But $P$ implies $\Box P$, because $P$ is an assertion of provability: our premises tell us it is equivalent (and provably equivalent) to some boxed sentence.
+In K4, such  assertions imply their own provability.
+Spelling that out as a chunk:
 
-$P$ is of this form, asserting that $\Box P \rightarrow Q$ is provable.
-So, let's start by noting that from $P$, we have $\Box P$.
 
 From there, we can do this derivation in K4:
 
 $$\frac{\begin{gathered}\Box P \\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
+
+Notice that we only needed K4.
+That's what I meant earlier when I said that proving a Payorian FairBot is Löbian-fair doesn't require Löb's theorem.
 
 #### Reverse: from $\Box Q$ to $P$
 
