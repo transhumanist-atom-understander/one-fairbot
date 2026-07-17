@@ -19,21 +19,18 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
 In this post I'll give this elementary proof.
+The elementary proof feels like something I could have learned to do in another universe's elementary school.
+The analogy is strengthened because GL is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
-Theorem 4.6 of the paper shows that you can eliminate this kind of self-reference from the condition.
-When you apply this procedure to Payorian fairness, what you get is Löbian fairness.
-You can prove equivalence of the Payorian and Löbian FairBots this way, in what I'll call a sophisticated (as opposed to elementary) proof.
-The sophisticated proof is quite short, but trying to give the background felt like writing another post, so I'm leaving it out.
+Theorem 4.6 of the paper shows that when an agent's cooperation condition mentions its own cooperation in this way, you can simplify the condition by eliminating this kind of self-reference.
+The theorem seems college-level, more like number theory than arithmetic, in contrast to the elementary proof I'll give in this post.
+But if you follow its proof, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
+You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
+But I had already written most of this post by the time I realized that, and I don't want to additionally spell it out.
 
-There's a distinction here something like the distinction between arithmetic and number theory.
-One might learn to do long multiplication in elementary school, and not learn until college how to prove that all numbers have a unique prime factorization.
-The elementary proof I'll give feels like something I could have learned to do in another universe's elementary school.
-The analogy is strengthened because GL is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
-Proving theorem 4.6, on the other hand, is college-level.
-
-I'll note one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually require Löb's theorem.
+Also, I'll note there's one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually require Löb's theorem.
 So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
 
 ## The elementary proof
