@@ -25,13 +25,15 @@ The analogy is strengthened because GL is decidable, so doing it on paper was li
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that when an agent's cooperation condition mentions its own cooperation in this way, you can simplify the condition by eliminating this kind of self-reference.
-The theorem seems college-level, more like number theory than arithmetic, in contrast to the elementary proof I'll give in this post.
+
+Theorem 4.6 feels college-level, more like number theory than arithmetic, in contrast to the elementary proof I'll give in this post.
 But if you follow its proof, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
 But I had already written most of this post by the time I realized that, and I don't want to additionally spell it out.
 
-Also, I'll note there's one insight that you only get from the elementary proof: proving that Payorian fairness implies Löbian fairness doesn't actually require Löb's theorem.
-So while in PA the conditions are equivalent, Payorian fairness is in another sense stricter.
+Also, I'll note that there's one insight that you only get from the elementary proof.
+When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
+So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
 
 ## The elementary proof
 
