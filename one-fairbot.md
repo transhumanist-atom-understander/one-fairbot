@@ -72,7 +72,7 @@ I consider this interesting because GL's extra axiom is Löb's theorem, so if a 
 ### How the GL proofs we'll do translate to PA
 
 The one theorem about provability logic that we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
-For a precise statement and an authoritative reference, see Boolos's _The Logic of Provability_, chapter 3, theorem 2.
+This theorem 4.1 in the MIRI paper, arithmetical soundness.
 (We don't need the converse, arithmetical completeness.
 I consider arithmetical completeness a deep theorem, which would disqualify this as an elementary proof.)
 
@@ -86,7 +86,7 @@ Consider some particular $X$, and the theorem of PA expressing Löbian fairness 
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 We also have another theorem of PA expressing the provability of this condition:
 $$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
-We can take this implication we proved in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
+We can take that implication we proved in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
 $$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
 Then, by modus ponens, we have Payorian fairness, as a theorem in PA, for this $F$ and $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
@@ -101,7 +101,7 @@ We'll also, of course, have to prove the other direction, from Payorian to Löbi
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box(\Box P \rightarrow Q)\\ \Box (P \leftrightarrow \Box(\Box P \rightarrow Q))\end{gathered}}{P \leftrightarrow \Box Q}$$
 
-And since the conclusion of each of these two argument is itself a bi-implication, that's four implications we need to prove.
+And since the conclusion of each of these two arguments is itself a bi-implication, that's four implications we need to prove.
 Each of the four implications will get its own subsection of this post.
 
 For each implication, I'm going to divide its proof into what seem to me like the significant chunks.
