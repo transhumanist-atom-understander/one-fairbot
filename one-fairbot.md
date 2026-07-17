@@ -78,7 +78,7 @@ I consider this interesting because GL's extra axiom is Löb's theorem, so if a 
 
 ### Outline of the elementary proof
 
-Repeating the bi-implication we're going to prove:
+Repeating the bi-implication we're going to prove, with Löbian fairness on the left and Payorian fairness on the right:
 
 $$\Box(P \leftrightarrow \Box Q) \leftrightarrow \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))$$
 
@@ -117,7 +117,7 @@ $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
 The following two subsections prove each of the two directions of this bi-implication.
 
-In this section, I won't use our two premises above directly as premises in a chunk.
+In the chunks in this section, I won't directly use our two premises above.
 Instead, for example, when arguing forward from $P$, I'll use $\Box Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
 That's what I mean by trusting the reader to chain the chunks into a full proof.
 
@@ -135,7 +135,7 @@ One intermediate statement we'll need can be proved in K4:
 $$\frac{\begin{gathered}\Box(\Box Q \rightarrow P)\end{gathered}}{\Box(\Box Q \rightarrow \Box P)}$$
 
 Note that the premise here is one direction of the bi-implication defining Löbian fairness.
-It's boxed, but that's fine because we're assuming boxed Löbian fairness.
+It's boxed, but that's fine because we're assuming the boxed as well as the unboxed form of Löbian fairness.
 
 Having proved that, we can use it to get from $\Box(\Box P \rightarrow Q)$ to $\Box Q$ in GL:
 
