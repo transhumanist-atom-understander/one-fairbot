@@ -18,18 +18,20 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 ## Elementary and sophisticated proofs
 
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
-I'll call this the "elementary proof", since it doesn't use any of the theorems about provability logic.
-Instead, once you set it up, you're just applying the rules of inference of provability logic, which is pretty mechanical.
-That kind of derivation feels like something I could have learned to do in another universe's elementary school, when I was learning arithmetic in this universe.
-The analogy is strengthened because the logic is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
+I'll call this the "elementary proof", since it doesn't use the deep theorems about provability logic like the fixed point theorem.
+Instead, once you set it up, you're just mechanically applying the rules of inference of provability logic.
+In fact, since the logic is decidable, I should have been able to just plug it into a computer program.
+But I don't know how to do that, so I did the proof on paper.
 
-After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
+After working out the elementary proof, I was reviewing [the MIRI paper I linked earlier](https://arxiv.org/abs/1401.5577), and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
-Theorem 4.6 of the paper shows that when an agent's cooperation condition mentions its own cooperation in this way, you can simplify the condition by eliminating this kind of self-reference.
+Theorem 4.6 of the paper shows that when an agent's cooperation condition references its own cooperation in this way, this reference can be eliminated.
+That is, there's another equivalent condition without it, which I'll call the "simplification".
 
-Theorem 4.6 feels college-level, more like number theory than arithmetic, in contrast to the elementary reasoning in this post.
+Theorem 4.6 proves a generality, whereas we're concerned with a particular case.
 But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
+I'll call this the sophisticated, as opposed to elementary, proof.
 
 The rest of this post will be about the elementary proof.
 That's really just because I had written most of it by the time I understood the sophisticated proof.
