@@ -67,8 +67,8 @@ $$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text
 If you like, you can interpret that as saying that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
 
 I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
-Adding one axiom to K yields K4, and adding another additional axiom to K4 yields GL.
-(Or you can define GL by adding one axiom to K, but that axiom implies K4's extra axiom).
+Adding one axiom to K yields K4, and adding another axiom to K4 yields GL.
+(Or you can define GL by adding one axiom to K, but that axiom implies K4's extra axiom.)
 So when I say some derivation can be done in K or K4, it can also be done in GL.
 I consider this interesting because GL's extra axiom is Löb's theorem, so if a derivation can be done in K4, that means we didn't need Löb's theorem.
 
@@ -161,13 +161,13 @@ $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
 For this direction, we will need not just $P$ but $\Box P$.
 But $P$ implies $\Box P$, because $P$ is an assertion of provability: our premises tell us it is equivalent (and provably equivalent) to some boxed sentence.
-In K4, such  assertions imply their own provability.
+In K4, such assertions imply their own provability.
 Spelling that out as a chunk:
 
 $$\frac{\begin{gathered}
 P \leftrightarrow \Box(\Box P \rightarrow Q)\\
 \Box(P \leftrightarrow \Box(\Box P \rightarrow Q))\\
-P\\ 
+P
 \end{gathered}}{\Box P}$$
 
 I just want to emphasize that this chunk is a lot simpler than it looks, because it doesn't actually matter what's behind the box.
