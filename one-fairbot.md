@@ -84,12 +84,12 @@ For example, from left to right in the bi-implication, from Löbian fairness to 
 
 $$\frac{\Box(P \leftrightarrow \Box Q)}{\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))}$$
 
-But instead of making that argument directly, I'm going to use the fact that in K4 (and therefore GL), $\Box A \rightarrow \Box B$ (the form of the above argument) is a thereom if $(A \land \Box A) \rightarrow B$ is.
+But instead of making that argument directly, I'm going to use the fact that in K4 (and therefore GL), $\Box A \rightarrow \Box B$ (the form of the above argument) is a theorem if $(A \land \Box A) \rightarrow B$ is.
 So the argument I'll actually make is this one:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-That feels more natural to me, because I can imagine each line corresponds to a line in a valid PA argument.
+That feels more natural to me, because I can imagine that each line corresponds to a line in a valid PA argument.
 
 We'll have to make two arguments like that, one for each direction between Löbian and Payorian fairness.
 And the conclusion of each argument is itself a bi-implication, so that's four implications we need to prove.
