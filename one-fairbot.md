@@ -18,9 +18,9 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 ## Elementary and sophisticated proofs
 
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
-I'll call this the "elementary proof", since it doesn't use the deep theorems about provability logic like the fixed point theorem.
-Instead, once you set it up, you're just mechanically applying the rules of inference of provability logic.
-In fact, since the logic is decidable, I should have been able to just plug it into a computer program.
+I'll call this the "elementary proof", since it doesn't use any of the theorems about provability logic beyond the one that says it applies to PA.
+The bulk of the proof is just mechanically applying the rules of inference of provability logic.
+In fact, since the logic is decidable, I should have been able to just plug the question into a computer program.
 But I don't know how to do that, so I did the proof on paper.
 
 After working out the elementary proof, I was reviewing [the MIRI paper I linked earlier](https://arxiv.org/abs/1401.5577), and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
@@ -31,7 +31,6 @@ That is, there's another equivalent condition without it, which I'll call the "s
 Theorem 4.6 proves a generality, whereas we're concerned with a particular case.
 But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
-I'll call this the sophisticated, as opposed to elementary, proof.
 
 I'll note that there is one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
