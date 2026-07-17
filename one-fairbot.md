@@ -27,8 +27,8 @@ After working out the elementary proof, I was reviewing the original modal comba
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that when an agent's cooperation condition mentions its own cooperation in this way, you can simplify the condition by eliminating this kind of self-reference.
 
-Theorem 4.6 feels college-level, more like number theory than arithmetic, in contrast to the elementary proof I'll give in this post.
-But if you follow its proof, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
+Theorem 4.6 feels college-level, more like number theory than arithmetic, in contrast to the elementary reasoning in this post.
+But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
 But I had already written most of this post by the time I realized that, and I don't want to additionally spell it out.
 
