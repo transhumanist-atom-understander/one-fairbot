@@ -18,10 +18,10 @@ The Payorian FairBot is Löbian-fair, and the original Löbian FairBot is Payori
 ## Elementary and sophisticated proofs
 
 One way to prove the equivalence of these two fairness conditions is to simply grind through provability logic in both directions.
-In this post I'll give this elementary proof.
-It will be long, but once you set it up, it just consists of mechanical derivations that require no abstraction or insight.
-That kind of modal logic feels like something I could have learned to do in another universe's elementary school, when I was learning arithmetic in this universe.
-The analogy is strengthened because the modal logic is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
+I'll call this the "elementary proof", since it doesn't use any of the theorems about provability logic.
+Instead, once you set it up, you're just applying the rules of inference of provability logic, which is pretty mechanical.
+That kind of derivation feels like something I could have learned to do in another universe's elementary school, when I was learning arithmetic in this universe.
+The analogy is strengthened because the logic is decidable, so doing it on paper was like doing long multiplication instead of using a calculator.
 
 After working out the elementary proof, I was reviewing the original modal combat paper, and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
@@ -30,9 +30,13 @@ Theorem 4.6 of the paper shows that when an agent's cooperation condition mentio
 Theorem 4.6 feels college-level, more like number theory than arithmetic, in contrast to the elementary reasoning in this post.
 But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
-But I had already written most of this post by the time I realized that, and I don't want to additionally spell it out.
 
-Also, I'll note that there's one insight that you only get from the elementary proof.
+I felt that I should write up at least one proof in this post.
+I give the elementary proof, and to be honest, it's because I had already mostly written the post by the time I understood the sophisticated proof along the lines of Theorem 4.6.
+And, to be perhaps too honest, I'm currently unemployed and feeling a bit like [the character in Parks & Rec that lost his job and then spent weeks making a few seconds of a claymation video](https://parksandrecreation.fandom.com/wiki/The_Comeback_Kid).
+(Anyone need a computational chemist/cheminformaticist?)
+
+However, I'll note that there's one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
 So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
 
