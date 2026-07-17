@@ -31,12 +31,10 @@ Theorem 4.6 feels college-level, more like number theory than arithmetic, in con
 But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
 
-I felt that I should write up at least one proof in this post.
-I give the elementary proof, and to be honest, it's because I had already mostly written the post by the time I understood the sophisticated proof along the lines of Theorem 4.6.
-And, to be perhaps too honest, I'm currently unemployed and feeling a bit like [the character in Parks & Rec who lost his job and then worked for weeks on a few seconds of a claymation video](https://parksandrecreation.fandom.com/wiki/The_Comeback_Kid).
-(Anyone need a computational chemist/cheminformatician?)
+The rest of this post will be about the elementary proof.
+That's really just because I had written most of it by the time I understood the sophisticated proof.
 
-However, I'll note that there's one insight that you only get from the elementary proof.
+However, I'll note that there is one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
 So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
 
