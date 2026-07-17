@@ -149,6 +149,14 @@ We will separately prove the two directions in the statement of Löbian fairness
 
 $$P \leftrightarrow \Box Q$$
 
+Starting with the reverse direction this time, since it's trivial.
+
+#### Reverse: from $\Box Q$ to $P$
+
+Just this K derivation again:
+
+$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
+
 #### Forward: from $P$ to $\Box Q$
 
 For this direction, we will need not just $P$ but $\Box P$.
@@ -156,16 +164,17 @@ But $P$ implies $\Box P$, because $P$ is an assertion of provability: our premis
 In K4, such  assertions imply their own provability.
 Spelling that out as a chunk:
 
+$$\frac{\begin{gathered}
+P \leftrightarrow \Box(\Box P \rightarrow Q)\\
+\Box(P \leftrightarrow \Box(\Box P \rightarrow Q))\\
+P\\ 
+\end{gathered}}{\Box P}$$
+
+I just want to emphasize that this chunk is a lot simpler than it looks, because it doesn't actually matter what's behind the box.
 
 From there, we can do this derivation in K4:
 
-$$\frac{\begin{gathered}\Box P \\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
+$$\frac{\begin{gathered}\Box P\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
 
-Notice that we only needed K4.
+Notice that we only needed K4 here, not GL.
 That's what I meant earlier when I said that proving a Payorian FairBot is Löbian-fair doesn't require Löb's theorem.
-
-#### Reverse: from $\Box Q$ to $P$
-
-Just this K derivation again:
-
-$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
