@@ -171,7 +171,7 @@ Just this K derivation again:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
-All that's different is that this time, it's the conclusion, not the premise, that's equivalent to P.
+All that's different is that this time it's the conclusion that's equivalent to P, rather than the premise.
 
 #### Forward: from $P$ to $\Box Q$
 
