@@ -33,8 +33,8 @@ You just have to show that the simplification of Payorian fairness, which the th
 
 I felt that I should write up at least one proof in this post.
 I give the elementary proof, and to be honest, it's because I had already mostly written the post by the time I understood the sophisticated proof along the lines of Theorem 4.6.
-And, to be perhaps too honest, I'm currently unemployed and feeling a bit like [the character in Parks & Rec that lost his job and then spent weeks making a few seconds of a claymation video](https://parksandrecreation.fandom.com/wiki/The_Comeback_Kid).
-(Anyone need a computational chemist/cheminformaticist?)
+And, to be perhaps too honest, I'm currently unemployed and feeling a bit like [the character in Parks & Rec who lost his job and then worked for weeks on a few seconds of a claymation video](https://parksandrecreation.fandom.com/wiki/The_Comeback_Kid).
+(Anyone need a computational chemist/cheminformatician?)
 
 However, I'll note that there's one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
