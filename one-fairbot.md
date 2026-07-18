@@ -133,6 +133,8 @@ In K:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
+In this subsection, we assumed a Löbian FairBot, and proved that if it cooperates ($P$), then the Payorian cooperation condition holds.
+
 #### Reverse: from $\Box (\Box P \rightarrow Q)$ to $P$
 
 One intermediate statement we'll need can be proved in K4:
@@ -149,6 +151,8 @@ $$\frac{\begin{gathered}\Box(\Box Q \rightarrow \Box P)\\ \Box(\Box P \rightarro
 It works because once you chain the two implications you can apply Löb's theorem.
 
 Then, remember, we're assuming the equivalence of $\Box Q$ and $P$, so we're done.
+
+In this subsection, we've proved that the Payorian cooperation condition is sufficient for a Löbian FairBot to cooperate.
 
 ### A Payorian FairBot is Löbian-fair
 
@@ -171,7 +175,9 @@ Just this K derivation again:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
-All that's different is that this time it's the conclusion that's equivalent to P, rather than the premise.
+All that's different is that this time it's the conclusion that's equivalent to $P$, rather than the premise.
+
+In this subsection, we've proved that a Payorian FairBot cooperates if its opponent provably cooperates (the Löbian cooperation condition).
 
 #### Forward: from $P$ to $\Box Q$
 
@@ -194,3 +200,5 @@ $$\frac{\begin{gathered}\Box P\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box 
 
 Notice that we only needed K4 here, not GL.
 That's what I meant earlier when I said that proving a Payorian FairBot is Löbian-fair doesn't require Löb's theorem.
+
+In this subsection we've proved that the Payorian FairBot cooperating implies that its opponent must provably cooperate.
