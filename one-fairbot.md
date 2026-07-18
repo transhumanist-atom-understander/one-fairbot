@@ -1,14 +1,14 @@
 # My "Payorian FairBot" was just the original FairBot
 
-[MIRI's proof-based prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined "agents" encoded as formulas of Peano arithmetic (PA) with one free variable.
-$A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ as the free variable in the formula defining $A$.
+[MIRI's proof-based prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined agents encoded as formulas of Peano arithmetic (PA) with one free variable.
+$A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ for the free variable in the formula defining $A$.
 
 The simplest interesting agent in the tournament was called FairBot.
-Using $F(X)$ to mean FairBot cooperates with another agent $X$, then for all agents $X$, we have:
+Using $F(X)$ to mean FairBot cooperates with another agent $X$, for all agents $X$ we have:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 I will call this condition Löbian fairness, and refer to this agent as the Löbian FairBot.
 
-That's because in [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames), I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
+In [a previous post](https://www.lesswrong.com/posts/LaCP6WyNzX8kiZn3w/payorian-cooperation-is-easy-with-kripke-frames) I defined an alternative "Payorian FairBot", which satisfies a condition I'll call Payorian fairness:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
 
 I wondered, though, is this really a distinct agent?
@@ -32,8 +32,8 @@ Theorem 4.6 proves a generality, whereas we're concerned with a particular case.
 But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
 You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
 
-I'll note that there is one insight that you only get from the elementary proof.
-When proving that Payorian fairness implies Löbian fairness, we'll find that we don't need to use Löb's theorem.
+But there is one insight that you only get from the elementary proof.
+When proving that Payorian fairness implies Löbian fairness, you find that you don't need to use Löb's theorem.
 So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
 
 The rest of this post will be a detailed explanation of the elementary proof.
@@ -65,30 +65,28 @@ This means that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Con
 
 I'll note when a derivation only needs a weaker theory: either [K4](https://plato.stanford.edu/entries/logic-modal/#ModAxiConFra) or [K](https://plato.stanford.edu/entries/logic-modal/#ModLog).
 Adding one axiom to K yields K4, and adding another axiom to K4 yields GL.
-(Or you can define GL by adding one axiom to K, but that axiom implies K4's extra axiom.)
 So when I say some derivation can be done in K or K4, it can also be done in GL.
 I consider this interesting because GL's extra axiom is Löb's theorem, so if a derivation can be done in K4, that means we didn't need Löb's theorem.
 
 ### How the GL proofs we'll do translate to PA
 
 The one theorem about provability logic that we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
-This theorem 4.1 in the MIRI paper, arithmetical soundness.
-(We don't need the converse, arithmetical completeness.
-I consider arithmetical completeness a deep theorem, which would disqualify this as an elementary proof.)
+This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
 To prove that Löbian fairness implies Payorian fairness, we'll make this argument in GL:
 
 $$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
 Just for this direction I'll spell out how this argument of GL helps us in PA.
-Suppose that we have some agent $F$, for which we have Löbian fairness as I originally stated it, as a theorem of PA for each agent.
-Consider some particular $X$, and the theorem of PA expressing Löbian fairness for $F$ and $X$:
+Suppose that we have a Löbian agent $F$.
+That is, we have Löbian fairness as I originally stated it, as a theorem of PA for each opponent.
+Consider that theorem for some particular opponent $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
-We also have another theorem of PA expressing the provability of this condition:
+We also have another theorem of PA asserting that this theorem is provable:
 $$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
-We can take that implication we proved in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
+We can take that implication we'll prove in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
 $$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
-Then, by modus ponens, we have Payorian fairness, as a theorem in PA, for this $F$ and $X$:
+Then, by modus ponens, we have Payorian fairness, as a theorem of PA, for this $F$ and $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
 This works for arbitrary $X$, so we have that $F$ is Payorian-fair.
 
@@ -105,7 +103,8 @@ And since the conclusion of each of these two arguments is itself a bi-implicati
 Each of the four implications will get its own subsection of this post.
 
 For each implication, I'm going to divide its proof into what seem to me like the significant chunks.
-I'll trust that a patient reader can fill in the proofs for the chunks, as well as use them to assemble the full proof required.
+I'll try to make it clear how these chunks can be assembled into a full proof.
+And I'm sure that a patient reader can fill in their own proofs for each chunk.
 
 ### A Löbian FairBot is Payorian-fair
 
@@ -116,20 +115,21 @@ $$\begin{gather}
   \Box(P \leftrightarrow \Box Q)
 \end{gather}$$
 
+In the chunks in this section, I won't directly use our two premises above.
+Instead, for example, when arguing forward from $P$, I'll use $\Box Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
+
 From these premises we will prove Payorian fairness:
 
 $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 
 The following two subsections prove each of the two directions of this bi-implication.
 
-In the chunks in this section, I won't directly use our two premises above.
-Instead, for example, when arguing forward from $P$, I'll use $\Box Q$ as a premise, and you'll have to remember that one of our premises connects $P$ to $\Box Q$.
-That's what I mean by trusting the reader to chain the chunks into a full proof.
 
 #### Forward: from $P$ to $\Box (\Box P \rightarrow Q)$
 
 This is the easy direction.
-In K:
+
+From $P$ we have $\Box Q$, and in K:
 
 $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
@@ -177,7 +177,7 @@ $$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
 
 All that's different is that this time it's the conclusion that's equivalent to $P$, rather than the premise.
 
-In this subsection, we've proved that a Payorian FairBot cooperates if its opponent provably cooperates (the Löbian cooperation condition).
+In this subsection, we've proved that a Payorian FairBot cooperates if there's a proof that its opponent cooperates.
 
 #### Forward: from $P$ to $\Box Q$
 
@@ -194,11 +194,12 @@ P
 
 I just want to emphasize that this chunk is a lot simpler than it looks, because it doesn't actually matter what's behind the box.
 
-From there, we can do this derivation in K4:
+From there, we can do this derivation in K4, using two premises that both follow from $P$:
 
 $$\frac{\begin{gathered}\Box P\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
+
+In this subsection we've proved that the Payorian FairBot cooperating implies a proof that its opponent cooperates.
 
 Notice that we only needed K4 here, not GL.
 That's what I meant earlier when I said that proving a Payorian FairBot is Löbian-fair doesn't require Löb's theorem.
 
-In this subsection we've proved that the Payorian FairBot cooperating implies that its opponent must provably cooperate.
