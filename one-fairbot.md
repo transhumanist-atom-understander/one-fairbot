@@ -28,8 +28,7 @@ Note that both FairBots cooperate ($F(X)$) if and only if some sentence is prova
 Theorem 4.6 of the paper shows that when an agent's cooperation condition references its own cooperation in this way, this reference can be eliminated.
 That is, there's another equivalent condition without it, which I'll call the "simplification".
 
-Theorem 4.6 proves a generality, whereas we're concerned with a particular case.
-But if you follow the proof of the theorem, you can adapt it to a proof that the Löbian and Payorian FairBots are equivalent.
+If you follow the proof of theorem 4.6, you can adapt it to a proof that the Löbian and Payorian FairBots are equivalent.
 The theorem implies that there exists a simplification of Payorian fairness, but instead, you want to show that Löbian fairness is the simplification.
 Once the background is in place, this more sophisticated proof requires much less work in provability logic than the elementary proof.
 
@@ -38,6 +37,8 @@ When proving that Payorian fairness implies Löbian fairness, you find that you 
 So while in PA the conditions are equivalent, I suppose that in a weaker system, Payorian fairness is a stricter condition.
 
 The rest of this post will be a detailed explanation of the elementary proof.
+Not really because of that additional insight, and not just because I had already written most of it by the time I understood the sophisticated proof.
+But also because this kind of elementary reasoning is my main tool for thinking through these cooperation problems, and I suspect others do a lot of it behind the scenes, even though they don't put it in the final writeup―understandably, as you'll see.
 
 ## The elementary proof
 
