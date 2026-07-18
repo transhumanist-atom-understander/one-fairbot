@@ -23,14 +23,15 @@ The bulk of the proof is just mechanically applying the rules of inference of pr
 In fact, since the logic is decidable, I should have been able to just plug the question into a computer program.
 But I don't know how to do that, so I did the proof on paper.
 
-After working out the elementary proof, I was reviewing [the MIRI paper I linked earlier](https://arxiv.org/abs/1401.5577), and realized that to anyone who fully understood it, it may be obvious that the Payorian and Löbian FairBots are equivalent.
+After working out the elementary proof, I was reviewing [the MIRI paper I linked earlier](https://arxiv.org/abs/1401.5577), and realized that to anyone who fully understood it, it might be obvious that the Payorian and Löbian FairBots are equivalent.
 Note that both FairBots cooperate ($F(X)$) if and only if some sentence is provable, but only for the Payorian FairBot does that sentence include $F(X)$.
 Theorem 4.6 of the paper shows that when an agent's cooperation condition references its own cooperation in this way, this reference can be eliminated.
 That is, there's another equivalent condition without it, which I'll call the "simplification".
 
 Theorem 4.6 proves a generality, whereas we're concerned with a particular case.
-But if you follow the proof of the theorem, you can adapt it to a short demonstration that the Löbian and Payorian FairBots are equivalent.
-You just have to show that the simplification of Payorian fairness, which the theorem asserts must exist, is Löbian fairness.
+But if you follow the proof of the theorem, you can adapt it to a proof that the Löbian and Payorian FairBots are equivalent.
+The theorem implies that there exists a simplification of Payorian fairness, but instead, you want to show that Löbian fairness is the simplification.
+Once the background is in place, this more sophisticated proof requires much less work in provability logic than the elementary proof.
 
 But there is one insight that you only get from the elementary proof.
 When proving that Payorian fairness implies Löbian fairness, you find that you don't need to use Löb's theorem.
