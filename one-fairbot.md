@@ -57,7 +57,7 @@ But despite the intended interpretation, $P$ and $Q$ are just propositional vari
 
 ### Arguments in GL and weaker modal logics
 
-In this post, I'm going to notate valid arguments in GL like this:
+In this post, I'm going to notate valid arguments in GL by listing the premises and the conclusion separated by a horizontal bar:
 
 $$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
 
