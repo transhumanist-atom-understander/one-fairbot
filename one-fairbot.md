@@ -60,7 +60,10 @@ But despite the intended interpretation, $P$ and $Q$ are just propositional vari
 
 In this post, I'm going to notate valid arguments in GL by listing the premises and the conclusion separated by a horizontal bar:
 
-$$\frac{\begin{gathered}\text{Premise 1}\\ \text{Premise 2}\end{gathered}}{\text{Conclusion}}$$
+$$\frac{\begin{gathered}
+\text{Premise 1}\\
+\text{Premise 2}\end{gathered}}
+{\text{Conclusion}}$$
 
 This means that $(\text{Premise 1} \land \text{Premise 2}) \rightarrow \text{Conclusion}$ is a theorem of GL.
 
@@ -76,7 +79,10 @@ This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
 To prove that Löbian fairness implies Payorian fairness, we'll make this argument in GL:
 
-$$\frac{\begin{gathered}P \leftrightarrow \Box Q\\ \Box(P \leftrightarrow \Box Q)\end{gathered}}{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
+$$\frac{\begin{gathered}
+P \leftrightarrow \Box Q\\
+\Box(P \leftrightarrow \Box Q)\end{gathered}}
+{P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
 Just for this direction I'll spell out how this argument of GL helps us in PA.
 Suppose that we have a Löbian agent $F$.
@@ -98,7 +104,10 @@ The rest of this post will be reasoning _in_ GL.
 
 We'll also, of course, have to prove the other direction, from Payorian to Löbian fairness:
 
-$$\frac{\begin{gathered}P \leftrightarrow \Box(\Box P \rightarrow Q)\\ \Box (P \leftrightarrow \Box(\Box P \rightarrow Q))\end{gathered}}{P \leftrightarrow \Box Q}$$
+$$\frac{\begin{gathered}
+P \leftrightarrow \Box(\Box P \rightarrow Q)\\
+\Box (P \leftrightarrow \Box(\Box P \rightarrow Q))\end{gathered}}
+{P \leftrightarrow \Box Q}$$
 
 And since the conclusion of each of these two arguments is itself a bi-implication, that's four implications we need to prove.
 Each of the four implications will get its own subsection of this post.
@@ -132,7 +141,9 @@ This is the easy direction.
 
 From $P$ we have $\Box Q$, and in K:
 
-$$\frac{\begin{gathered}\Box Q\end{gathered}}{\Box(\Box P \rightarrow Q)}$$
+$$\frac{\begin{gathered}
+\Box Q\end{gathered}}
+{\Box(\Box P \rightarrow Q)}$$
 
 In this subsection, we assumed a Löbian FairBot, and proved that if it cooperates ($P$), then the Payorian cooperation condition holds.
 
@@ -140,14 +151,19 @@ In this subsection, we assumed a Löbian FairBot, and proved that if it cooperat
 
 One intermediate statement we'll need can be proved in K4:
 
-$$\frac{\begin{gathered}\Box(\Box Q \rightarrow P)\end{gathered}}{\Box(\Box Q \rightarrow \Box P)}$$
+$$\frac{\begin{gathered}
+\Box(\Box Q \rightarrow P)\end{gathered}}
+{\Box(\Box Q \rightarrow \Box P)}$$
 
 Note that the premise here is one direction of the bi-implication defining Löbian fairness.
 It's boxed, but that's fine because we're assuming the boxed as well as the unboxed form of Löbian fairness.
 
 Having proved that, we can use it to get from $\Box(\Box P \rightarrow Q)$ to $\Box Q$ in GL:
 
-$$\frac{\begin{gathered}\Box(\Box Q \rightarrow \Box P)\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
+$$\frac{\begin{gathered}
+\Box(\Box Q \rightarrow \Box P)\\
+\Box(\Box P \rightarrow Q)\end{gathered}}
+{\Box Q}$$
 
 It works because once you chain the two implications you can apply Löb's theorem.
 
@@ -197,7 +213,10 @@ I just want to emphasize that this chunk is a lot simpler than it looks, because
 
 From there, we can do this derivation in K4, using two premises that both follow from $P$:
 
-$$\frac{\begin{gathered}\Box P\\ \Box(\Box P \rightarrow Q)\end{gathered}}{\Box Q}$$
+$$\frac{\begin{gathered}
+\Box P\\
+\Box(\Box P \rightarrow Q)\end{gathered}}
+{\Box Q}$$
 
 In this subsection we've proved that the Payorian FairBot cooperating implies a proof that its opponent cooperates.
 
