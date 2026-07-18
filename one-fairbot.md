@@ -1,7 +1,7 @@
 # My "Payorian FairBot" was just the original FairBot
 
 [MIRI's proof-based prisoner's dilemma tournament](https://arxiv.org/abs/1401.5577) defined agents encoded as formulas of Peano arithmetic (PA) with one free variable.
-$A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging in the Gödel number of the formula defining $X$ for the free variable in the formula defining $A$.
+$A(X)$ means the agent $A$ cooperates in a match against the agent $X$, and is constructed by plugging the Gödel number of the formula defining $X$ into the formula defining $A$.
 
 The simplest interesting agent in the tournament was called FairBot.
 Using $F(X)$ to mean FairBot cooperates with another agent $X$, for all agents $X$ we have:
@@ -84,14 +84,16 @@ P \leftrightarrow \Box Q\\
 \Box(P \leftrightarrow \Box Q)\end{gathered}}
 {P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-Just for this direction I'll spell out how this argument of GL helps us in PA.
-Suppose that we have a Löbian agent $F$.
+Remember, this means we'll prove a material implication in GL.
+
+Here's how this theorem of GL helps us in PA.
+Suppose that we have a Löbian FairBot $F$.
 That is, we have Löbian fairness as I originally stated it, as a theorem of PA for each opponent.
 Consider that theorem for some particular opponent $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 We also have another theorem of PA asserting that this theorem is provable:
 $$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
-We can take that implication we'll prove in GL (remember that my bar notation represents a material implication) and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
+We can take that implication we'll prove in GL and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
 $$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
 Then, by modus ponens, we have Payorian fairness, as a theorem of PA, for this $F$ and $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
@@ -199,7 +201,7 @@ In this subsection, we've proved that a Payorian FairBot cooperates if there's a
 #### Forward: from $P$ to $\Box Q$
 
 For this direction, we will need not just $P$ but $\Box P$.
-But $P$ implies $\Box P$, because $P$ is an assertion of provability: our premises tell us it is equivalent (and provably equivalent) to some boxed sentence.
+But $P$ implies $\Box P$, because $P$ is an assertion of provability: our premises tell us it is equivalent, and provably equivalent, to some boxed sentence.
 In K4, such assertions imply their own provability.
 Spelling that out as a chunk:
 
