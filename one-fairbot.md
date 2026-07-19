@@ -92,7 +92,8 @@ Suppose that we have a Löbian FairBot $F$.
 That is, we have Löbian fairness as I originally stated it, as a theorem of PA for each opponent.
 Consider that theorem for some particular opponent $X$:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
-We also have another theorem of PA asserting that this theorem is provable:
+Since this is a theorem, by definition it has a proof.
+Therefore there's another theorem of PA which asserts that it has a proof:
 $$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
 We can take that implication we'll prove in GL and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
 $$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
