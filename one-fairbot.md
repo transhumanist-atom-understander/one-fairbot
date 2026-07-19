@@ -75,31 +75,41 @@ I consider this interesting because GL's extra axiom is Löb's theorem, so if a 
 
 ### How the GL proofs we'll do translate to PA
 
-The one theorem about provability logic that we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
+The fairness conditions I started the post with are defined in terms of theorems of PA.
+We need just a bit of metamathematical reasoning to explain how our GL arguments give us what we want in PA.
+That is, when we make a valid GL argument, what does the existence of this valid GL argument prove about PA?
+
+The one metamathematical theorem we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
 This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
-To prove that Löbian fairness implies Payorian fairness, we'll make this argument in GL:
+Here's how we'll prove that the Löbian fairness condition implies the Payorian fairness condition, as I originally defined them in terms of PA.
+(The other direction, from Payorian Löbian, will work the same way.)
+
+Suppose that we have a Löbian FairBot $F$.
+That means we have a certain theorem of PA for each opponent.
+Consider that theorem for some particular opponent $X$:
+$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
+
+Since this is a theorem, by definition it has a proof.
+Therefore there's another theorem of PA which asserts that it has a proof:
+$$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
+So we have as theorems of PA not just the unboxed form but also the boxed form of this sentence.
+
+This is the argument we'll make in GL:
 
 $$\frac{\begin{gathered}
 P \leftrightarrow \Box Q\\
 \Box(P \leftrightarrow \Box Q)\end{gathered}}
 {P \leftrightarrow \Box(\Box P \rightarrow Q)}$$
 
-Remember, this means we'll prove a material implication in GL.
+Remember, this means we'll prove a theorem of GL: a material implication from premises to conclusion.
 
-Here's how this theorem of GL helps us in PA.
-Suppose that we have a Löbian FairBot $F$.
-That is, we have Löbian fairness as I originally stated it, as a theorem of PA for each opponent.
-Consider that theorem for some particular opponent $X$:
-$$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
-Since this is a theorem, by definition it has a proof.
-Therefore there's another theorem of PA which asserts that it has a proof:
-$$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
-We can take that implication we'll prove in GL and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$ and get an implication in PA:
+Take that GL implication and substitute in $F(X)$ for $P$ and $X(F)$ for $Q$, and you get an implication in PA:
 $$\mathrm{PA} \vdash (F(X) \leftrightarrow \Box X(F)) \land \Box (F(X) \leftrightarrow \Box X(F)) \rightarrow (F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F)))$$
-Then, by modus ponens, we have Payorian fairness, as a theorem of PA, for this $F$ and $X$:
+Then, by modus ponens, we have:
 $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box(\Box F(X) \rightarrow X(F))$$
-This works for arbitrary $X$, so we have that $F$ is Payorian-fair.
+
+This all works for arbitrary $X$, so we have that $F$ is Payorian-fair.
 
 And that's the last reasoning _about_ GL we're going to have to do.
 The rest of this post will be reasoning _in_ GL.
