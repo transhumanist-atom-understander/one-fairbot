@@ -83,7 +83,7 @@ The one metamathematical theorem we'll need is that when you take a theorem of G
 This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
 Here's how we'll prove that the Löbian fairness condition implies the Payorian fairness condition, as I originally defined them in terms of PA.
-(The other direction, from Payorian Löbian, will work the same way.)
+(The other direction, from Payorian to Löbian, will work the same way.)
 
 Suppose that we have a Löbian FairBot $F$.
 That means we have a certain theorem of PA for each opponent.
