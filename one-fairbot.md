@@ -76,7 +76,7 @@ But despite the intended interpretation, $P$ and $Q$ are just propositional vari
 From here, you may expect that I will make GL arguments with one of these fairness conditions as a premise and the other as a conclusion.
 Actually, our GL arguments will have two premises: one raw, one boxed.
 For example, when arguing that a Löbian FairBot is Payorian-fair, the GL argument will have as premises both $P \leftrightarrow \Box Q$ and $\Box(P \leftrightarrow \Box Q)$.
-I'll explain why we can get away with that second premise in the next section.
+I'll explain why we can get away with that extra boxed premise in the next section.
 
 ### How the GL proofs we'll do translate to PA
 
