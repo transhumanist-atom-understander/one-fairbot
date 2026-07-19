@@ -76,15 +76,15 @@ But despite the intended interpretation, $P$ and $Q$ are just propositional vari
 From here, you may expect that I will make GL arguments with one of these fairness conditions as a premise and the other as a conclusion.
 Actually, our GL arguments will have two premises: one raw, one boxed.
 For example, when arguing that a Löbian FairBot is Payorian-fair, the GL argument will have as premises both $P \leftrightarrow \Box Q$ and $\Box(P \leftrightarrow \Box Q)$.
-These GL arguments with two premises are sufficient to prove what we want about the real fairness conditions, the ones in PA.
-I'll explain why in the next section.
+I'll explain why we can get away with that second premise in the next section.
 
 ### How the GL proofs we'll do translate to PA
 
-The fairness conditions I started the post with are defined in terms of theorems of PA.
-We need just a bit of metamathematical reasoning to explain how our GL arguments give us what we want in PA.
+The real fairness conditions at the top of my post are defined in terms of theorems of PA, about $F(X)$ and $X(F)$.
+How will our arguments in GL, about "fairness conditions" that are GL sentences about propositional variables $P$ and $Q$, help us prove what we want about PA?
 
-The one metamathematical theorem we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
+We'll need one basic theorem about the relationship between GL and PA.
+It says that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
 This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
 Here's how we'll use GL to prove that the Löbian fairness condition implies the Payorian fairness condition, as I originally defined them in terms of PA.
