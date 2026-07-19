@@ -44,21 +44,6 @@ But also because this kind of elementary reasoning is my main tool for thinking 
 
 We will show the equivalence of the two fairness conditions using [the modal logic GL](https://plato.stanford.edu/entries/logic-provability/#AxioRule).
 
-Our GL proof will be in terms of propositional variables $P$ and $Q$.
-The intended interpretation of $P$ is that the FairBot cooperates, and $Q$ that its opponent cooperates.
-
-Motivated by that interpretation, the GL sentence that I'll call "Löbian fairness" is:
-
-$$P \leftrightarrow \Box Q$$
-
-and the GL sentence that I'll call "Payorian fairness" is:
-
-$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
-
-But despite the intended interpretation, $P$ and $Q$ are just propositional variables, and we can forget, while we're doing the proof, that we ultimately want to talk about the weird circularly-referential PA sentences $F(X)$ and $X(F)$.
-
-### Arguments in GL and weaker modal logics
-
 In this post, I'm going to notate valid arguments in GL by listing the premises and the conclusion separated by a horizontal bar:
 
 $$\frac{\begin{gathered}
@@ -72,6 +57,26 @@ I'll note when a derivation only needs a weaker theory: either [K4](https://plat
 Adding one axiom to K yields K4, and adding another axiom to K4 yields GL.
 So when I say some derivation can be done in K or K4, it can also be done in GL.
 I consider this interesting because GL's extra axiom is Löb's theorem, so if a derivation can be done in K4, that means we didn't need Löb's theorem.
+
+### The fairness conditions in GL
+
+Our GL proof will be in terms of propositional variables $P$ and $Q$.
+The intended interpretation of $P$ is that the FairBot cooperates, and $Q$ that its opponent cooperates.
+
+Motivated by that interpretation, the GL sentence that I'll call "Löbian fairness" is:
+
+$$P \leftrightarrow \Box Q$$
+
+and the GL sentence that I'll call "Payorian fairness" is:
+
+$$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
+
+But despite the intended interpretation, $P$ and $Q$ are just propositional variables, and we can forget, while we're doing the proof, that we ultimately want to talk about the weird circularly-referential PA sentences $F(X)$ and $X(F)$.
+
+From here, you may expect that I will make GL arguments with one of these fairness conditions as a premise and the other as a conclusion.
+Actually, our GL arguments will have two premises: the fairness condition as a GL sentence, and also that same sentence with a box in front of it.
+These GL arguments with two premises are sufficient to prove what we want about the real fairness conditions, the ones in PA.
+I'll explain that in the next section.
 
 ### How the GL proofs we'll do translate to PA
 
