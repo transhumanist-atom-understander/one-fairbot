@@ -77,12 +77,11 @@ I consider this interesting because GL's extra axiom is Löb's theorem, so if a 
 
 The fairness conditions I started the post with are defined in terms of theorems of PA.
 We need just a bit of metamathematical reasoning to explain how our GL arguments give us what we want in PA.
-That is, when we make a valid GL argument, what does the existence of this valid GL argument prove about PA?
 
 The one metamathematical theorem we'll need is that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
 This is theorem 4.1 in the MIRI paper, arithmetical soundness.
 
-Here's how we'll prove that the Löbian fairness condition implies the Payorian fairness condition, as I originally defined them in terms of PA.
+Here's how we'll use GL to prove that the Löbian fairness condition implies the Payorian fairness condition, as I originally defined them in terms of PA.
 (The other direction, from Payorian to Löbian, will work the same way.)
 
 Suppose that we have a Löbian FairBot $F$.
