@@ -93,7 +93,7 @@ $$\mathrm{PA} \vdash F(X) \leftrightarrow \Box X(F)$$
 Since this is a theorem, by definition it has a proof.
 Therefore there's another theorem of PA which asserts that it has a proof:
 $$\mathrm{PA} \vdash \Box (F(X) \leftrightarrow \Box X(F))$$
-So we have as theorems of PA not just the unboxed form but also the boxed form of this sentence.
+So we have as theorems of PA not just the unboxed form but consequently also the boxed form of this sentence.
 
 This is the argument we'll make in GL:
 
