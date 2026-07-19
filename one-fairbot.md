@@ -38,7 +38,7 @@ So while in PA the conditions are equivalent, I suppose that in a weaker system,
 
 The rest of this post will be a detailed explanation of the elementary proof.
 Not really because of that additional insight, and not just because I had already written most of it by the time I understood the sophisticated proof.
-But also because this kind of elementary reasoning is my main tool for thinking through these cooperation problems, and I suspect others do a lot of it behind the scenes, even though they don't put it in the final writeup―understandably, as you'll see.
+But also because this kind of elementary reasoning is my main tool for thinking through these cooperation problems, and I suspect others do a lot of it behind the scenes, even though they don't put it in the final writeup—understandably, as you'll see.
 
 ## The elementary proof
 
