@@ -81,7 +81,8 @@ I'll explain why we can get away with that extra boxed premise in the next secti
 ### How the GL proofs we'll do translate to PA
 
 The real fairness conditions at the top of my post are defined in terms of theorems of PA, about $F(X)$ and $X(F)$.
-How will our arguments in GL, about "fairness conditions" that are GL sentences about propositional variables $P$ and $Q$, help us prove what we want about PA?
+But for the rest of the post after this section, I will be making arguments about the "fairness conditions" in GL, about propositional variables $P$ and $Q$.
+How does this help us prove the equivalence of our fairness conditions in PA?
 
 We'll need one basic theorem about the relationship between GL and PA.
 It says that when you take a theorem of GL and substitute in sentences of PA for the propositional variables, you get a theorem of PA.
