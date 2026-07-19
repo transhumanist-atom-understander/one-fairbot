@@ -74,9 +74,10 @@ $$P \leftrightarrow \Box(\Box P \rightarrow Q)$$
 But despite the intended interpretation, $P$ and $Q$ are just propositional variables, and we can forget, while we're doing the proof, that we ultimately want to talk about the weird circularly-referential PA sentences $F(X)$ and $X(F)$.
 
 From here, you may expect that I will make GL arguments with one of these fairness conditions as a premise and the other as a conclusion.
-Actually, our GL arguments will have two premises: the fairness condition as a GL sentence, and also that same sentence with a box in front of it.
+Actually, our GL arguments will have two premises: one raw, one boxed.
+For example, when arguing that a Löbian FairBot is Payorian-fair, the GL argument will have as premises both $P \leftrightarrow \Box Q$ and $\Box(P \leftrightarrow \Box Q)$.
 These GL arguments with two premises are sufficient to prove what we want about the real fairness conditions, the ones in PA.
-I'll explain that in the next section.
+I'll explain why in the next section.
 
 ### How the GL proofs we'll do translate to PA
 
